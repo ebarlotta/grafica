@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subida de Archivos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .container {
+            margin-top: 50px;
+        }
+        
+        .dropzone {
+            border: 2px dashed #007bff;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        
+        .dropzone:hover {
+            background-color: #dfe3e6;
+        }
+        
+        .form-label {
+            font-weight: bold;
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="convenios.php" class="btn">Abrir Convenios</a>
+    </header>
+    <div class="container">
+        <h1 class="text-center">Subida de Archivos</h1>
+        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="cliente" class="form-label">Cliente</label>
+                <select class="form-select" id="cliente" name="cliente" required>
+                    <option value="">Selecciona un cliente</option>
+                    <?php
+                    include 'config.php'; // Asegúrate de que este archivo esté correctamente configurado
+                    // Cargar clientes desde la base de datos
+                    $clientes = $conn->query("SELECT * FROM clientes");
+                    if ($clientes->num_rows > 0) {
+                        while ($row = $clientes->fetch_assoc()): ?>
+                            <option value="<?php echo $row['id']; ?>"><?php echo $row['nombre']; ?></option>
+                        <?php endwhile; 
+                    } else {
+                        echo '<option value="">No hay clientes disponibles</option>';
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="telefono" name="telefono" required>
+            </div>
+            <div class="mb-3">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccion" name="direccion" required>
+            </div>
+            <div class="mb-3">
+                <label for="geoposicion" class="form-label">Ubicación Geoposicionada</label>
+                <input type="text" class="form-control" id="geoposicion" name="geoposicion" required>
+            </div>
+            <div class="mb-3">
+                <label for="archivo" class="form-label">Archivo</label>
+                <div class="dropzone" id="dropzone">Arrastra y suelta tu archivo aquí o haz clic para seleccionar</div>
+                <input type="file" class="form-control" id="archivo" name="archivo" style="display: none;" required>
+            </div>
+            <div class="mb-3">
+                <label for="tipo_documento" class="form-label">Tipo de Documento</label>
+                <select class="form-select" id="tipo_documento" name="tipo_documento" required>
+                    <option value="30%">Menos del 30%</option>
+                    <option value="50%">Hasta el 50%</option>
+                    <option value="100%">Pleno 100%</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="cantidad_hojas" class="form-label">Cantidad de Hojas</label>
+                <input type="number" class="form-control" id="cantidad_hojas" name="cantidad_hojas" required>
+            </div>
+            <div class="mb-3">
+                <label for="frente_dorso" class="form-label">Frente y Dorso</label>
+                <select class="form-select" id="frente_dorso" name="frente_dorso" required>
+                    <option value="frente">Frente</option>
+                    <option value="frente_dorso">Frente y Dorso</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="cantidad_ejemplares" class="form-label">Cantidad de Ejemplares</label>
+                <input type="number" class="form-control" id="cantidad_ejemplares" name="cantidad_ejemplares" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Calcular Costo</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('dropzone').addEventListener('click', function() {
+            document.getElementById('archivo').click();
+        });
+        document.getElementById('archivo').addEventListener('change', function() {
+            if (this.files.length > 0) {
+                document.getElementById('dropzone').innerText = this.files[0].name;
+            }
+        });
+    </script>
+</body>
+
+</html>

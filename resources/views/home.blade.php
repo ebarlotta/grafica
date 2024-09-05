@@ -13,9 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        
-                    {{ __('You are logged in!') }}
                 </div>
+                cards
             </div>
         </div>
     </div>

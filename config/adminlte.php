@@ -329,6 +329,31 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'Clientes',
+            'url' => 'clientes',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Convenios',
+            'url' => 'convenios',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Precios',
+            'url' => 'precios',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Tipos de Documentos',
+            'url' => 'tiposdocumentos',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Pedidos',
+            'url' => 'pedidos',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
             'text' => 'change_password',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',

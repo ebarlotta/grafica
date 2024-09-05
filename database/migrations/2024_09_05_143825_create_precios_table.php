@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('precios', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tipo_documento');
-            $table->double('precio_base');
+            $table->unsignedBigInteger('tipodocumento');
+            $table->double('preciobase');
             $table->timestamps();
             
-            $table->foreign('tipo_documento')->on('id')->references('tipodocumentos');
+            $table->foreign('tipodocumento')->references('id')->on('tipodocumentos');
+
         });
     }
 

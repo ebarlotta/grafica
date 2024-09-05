@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('convenios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_institucion');
-            $table->date('fecha_creacion');
-            $table->double('descuento_porcentaje');
+            $table->string('nombreinstitucion');
+            $table->date('fechacreacion');
+            $table->double('descuentoporcentaje');
             $table->timestamps();
         });
     }

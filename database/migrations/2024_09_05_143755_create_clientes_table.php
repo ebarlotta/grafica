@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('geoposicion')->nullable();
-            // $table->sring('reg_date') timestamp NULL DEFAULT NUL;
+            // $table->sring('regdate') timestamp NULL DEFAULT NUL;
             $table->timestamps();
         });
     }

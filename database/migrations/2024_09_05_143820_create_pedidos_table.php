@@ -19,15 +19,15 @@ return new class extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('geoposicion');
-            $table->unsignedBigInteger('tipo_documento');
-            $table->double('cantidad_hojas');
-            $table->boolean('frente_dorso');
-            $table->double('cantidad_ejemplares');
+            $table->unsignedBigInteger('tipodocumento');
+            $table->double('cantidadhojas');
+            $table->boolean('frentedorso');
+            $table->double('cantidadejemplares');
             $table->string('archivo');
-            // $table->string('fecha_creacion');
+            // $table->string('fechacreacion');
             $table->timestamps();
 
-            $table->foreign('tipo_documento')->on('id')->references('tipodocumentos');
+            $table->foreign('tipodocumento')->references('id')->on('tipodocumentos');
         });
     }
 

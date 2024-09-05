@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Precio extends Model
 {
     use HasFactory;
+
+    protected $fillable=[
+        'tipo_documento',
+        'precio_base',
+    ];
 }

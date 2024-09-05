@@ -1,5 +1,5 @@
 <!doctype html>
-@extends('adminlte::page')
+{{-- @extends('adminlte::page') --}}
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">

@@ -88,7 +88,7 @@ Modelo
   clientes
   pedidos
   Precios
-  Estados
+  # Estados
 
 
 Vista 
@@ -97,7 +97,7 @@ Vista
   Gestión de impresiones (Dashboard)
   Convenios
   Precios
-  Estados
+  # Estados
 
   Cliente -> más adelante
 
@@ -106,7 +106,7 @@ Controlador
   clientes
   pedidos
   Precios
-  Estados
+  # Estados
 --
 -- Estructura de tabla para la tabla `pedido`
 --

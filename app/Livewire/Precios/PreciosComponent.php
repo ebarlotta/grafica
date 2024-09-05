@@ -8,6 +8,6 @@ class PreciosComponent extends Component
 {
     public function render()
     {
-        return view('livewire.precios.precios-component');
+        return view('livewire.precios.precios-component')->extends('adminlte::page');
     }
 }

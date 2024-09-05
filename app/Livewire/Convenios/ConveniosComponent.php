@@ -8,6 +8,6 @@ class ConveniosComponent extends Component
 {
     public function render()
     {
-        return view('livewire.convenios.convenios-component');
+        return view('livewire.convenios.convenios-component')->extends('adminlte::page');
     }
 }

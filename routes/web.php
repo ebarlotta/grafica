@@ -2,7 +2,7 @@
 
 use App\Livewire\Clientes\ClientesComponent;
 use App\Livewire\Convenios\ConveniosComponent;
-use App\Livewire\EstadosComponent;
+use App\Livewire\Estados\EstadosComponent;
 use App\Livewire\Pedidos\PedidosComponent;
 use App\Livewire\Precios\PreciosComponent;
 use App\Livewire\Tiposdocumentos\TiposdocumentosComponent;

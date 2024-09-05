@@ -8,6 +8,6 @@ class PedidosComponent extends Component
 {
     public function render()
     {
-        return view('livewire.pedidos.pedidos-component');
+        return view('livewire.pedidos.pedidos-component')->extends('adminlte::page');
     }
 }

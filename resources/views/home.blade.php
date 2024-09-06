@@ -48,7 +48,7 @@
         {{--  FIN DE LA BARRA DE MENU  --}}
 
         {{-- INICIO DEL  CARRUCEL  --}}
-        <div id="carouselExampleIndicators" class="carousel slide">
+        <div id="carouselExampleIndicators" class="carousel slide mb-3">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -74,7 +74,10 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+
+
         {{--  FIN DEL CARRUCEL  --}}
+
 
         {{-- INCIO DE BOTONNES   --}}
 
@@ -94,51 +97,53 @@
         }
     </style>  --}}
 
-<body>
+    <div class="justify-content-center mb-5 mt-3">
+
     <div class="container mt-6">
         <div class="row justify-content-center">
             <div class="col-6 col-md-3">
-                <button class="btn btn-primary btn-custom">
+                <button class="btn btn-primary btn-custom mb-4">
                     <img src="{{ asset('fotos/imagen-imprenta.jpg') }}" alt="Imprenta">
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="btn btn-secondary btn-custom">
+                <button class="btn btn-secondary btn-custom mb-4">
                     <img src="{{ asset('fotos/imagen-rotulacion.jpg') }}" alt="Rotulación">
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="btn btn-success btn-custom">
+                <button class="btn btn-success btn-custom mb-4">
                     <img src="{{ asset('fotos/imagen-cajas.jpg') }}" alt="Cajas y Bolsas">
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="btn btn-danger btn-custom">
+                <button class="btn btn-danger btn-custom mb-4">
                     <img src="{{ asset('fotos/imagen-merchan.jpg') }}" alt="Merchandising">
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="btn btn-warning btn-custom">
+                <button class="btn btn-warning btn-custom mb-4">
                     <img src="{{ asset('fotos/imagen-deco.jpg') }}" alt="Decoración">
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="btn btn-info btn-custom">
+                <button class="btn btn-info btn-custom mb-4">
                     <img src="{{ asset('fotos/imagen-folletos.jpg') }}" alt="Folletos">
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="btn btn-light btn-custom">
+                <button class="btn btn-light btn-custom mb-4">
                     <img src="{{ asset('fotos/imagen-revista.jpg') }}" alt="Revistas">
                 </button>
             </div>
             <div class="col-6 col-md-3">
-                <button class="btn btn-dark btn-custom">
+                <button class="btn btn-dark btn-custom mb-4">
                     <img src="{{ asset('fotos/imagen-libros.jpg') }}" alt="Libros">
                 </button>
             </div>
         </div>
     </div>
+</div>
 
 
 

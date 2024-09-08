@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('organizacion');
             $table->string('email');
             $table->string('telefono');
             $table->string('direccion');
             $table->string('geoposicion')->nullable();
+            $table->string('organizacion');
             // $table->sring('regdate') timestamp NULL DEFAULT NUL;
             $table->timestamps();
         });

@@ -174,8 +174,9 @@
 
                     @extends('layouts.app')
 
-                    @section('content')
                     <div class="container">
+
+                        @section('content')
                         <div class="row justify-content-center">
 
                             {{--  desde aca se costruye la pagina  --}}
@@ -216,6 +217,17 @@
                                       <button class="btn btn-outline-success" type="submit">Buscar</button>
                                     </form>
                                   </div>
+                                  @if (Route::has('login'))
+                        <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                @endif
+
+                                @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                                @endif
                                 </div>
                               </nav>
 
@@ -489,9 +501,9 @@
 
                     {{--  FIN DEL CODIGO DE MARIO  --}}
 
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
+                    {{-- <footer class="py-16 text-center text-sm text-black dark:text-white/70">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </footer>
+                    </footer> --}}
                 </div>
             </div>
         </div>

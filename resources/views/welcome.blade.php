@@ -268,21 +268,6 @@
                             {{-- INCIO DE BOTONNES   --}}
 
 
-                        {{--  <style>
-                            .btn-custom {
-                                width: 200px;
-                                height: 200px;
-                                margin: 10px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                            }
-                            .btn-custom img {
-                                max-width: 100%;
-                                max-height: 100%;
-                            }
-                        </style>  --}}
-
                         <div class="justify-content-center mb-5 mt-3">
 
                         <div class="container mt-6">
@@ -322,9 +307,11 @@
                                         <img src="{{ asset('fotos/imagen-revista.jpg') }}" alt="Revistas">
                                     </button>
                                 </div>
+
+                                {{--  NESECITO CONECTA ESTE BOTON MODULO PARA ENVIAR ARCHIVOS enviartrabajos.html  --}}
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-dark btn-custom mb-4">
-                                        <img src="{{ asset('fotos/imagen-libros.jpg') }}" alt="Libros">
+                                        <img src="{{ asset('fotos/enviar.jpg') }}" alt="Libros">
                                     </button>
                                 </div>
                             </div>

@@ -308,7 +308,7 @@
                                     </button>
                                 </div>
 
-                                {{--  NESECITO CONECTA ESTE BOTON MODULO PARA ENVIAR ARCHIVOS enviartrabajos.html  --}}
+                                {{--  NESECITO CONECTA ESTE BOTON MODULO PARA ENVIAR ARCHIVOS enviartrabajos.html ** --}}
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-dark btn-custom mb-4">
                                         <img src="{{ asset('fotos/enviar.jpg') }}" alt="Libros">

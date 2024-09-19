@@ -275,36 +275,43 @@
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-primary btn-custom mb-4">
                                         <img src="{{ asset('fotos/imagen-imprenta.jpg') }}" alt="Imprenta">
+                                        <label for="titulo">Imprenta</label>
                                     </button>
                                 </div>
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-secondary btn-custom mb-4">
                                         <img src="{{ asset('fotos/imagen-rotulacion.jpg') }}" alt="Rotulación">
+                                        <label for="titulo">Rotulación</label>
                                     </button>
                                 </div>
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-success btn-custom mb-4">
                                         <img src="{{ asset('fotos/imagen-cajas.jpg') }}" alt="Cajas y Bolsas">
+                                        <label for="titulo">Vajas y Bolsas</label>
                                     </button>
                                 </div>
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-danger btn-custom mb-4">
                                         <img src="{{ asset('fotos/imagen-merchan.jpg') }}" alt="Merchandising">
+                                        <label for="titulo">Merchandising</label>
                                     </button>
                                 </div>
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-warning btn-custom mb-4">
                                         <img src="{{ asset('fotos/imagen-deco.jpg') }}" alt="Decoración">
+                                        <label for="titulo">Decoración</label>
                                     </button>
                                 </div>
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-info btn-custom mb-4">
                                         <img src="{{ asset('fotos/imagen-folletos.jpg') }}" alt="Folletos">
+                                        <label for="titulo">Merchandising</label>
                                     </button>
                                 </div>
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-light btn-custom mb-4">
                                         <img src="{{ asset('fotos/imagen-revista.jpg') }}" alt="Revistas">
+                                        <label for="titulo">Revistas</label>
                                     </button>
                                 </div>
 
@@ -312,6 +319,7 @@
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-dark btn-custom mb-4">
                                         <img src="{{ asset('fotos/enviar.jpg') }}" alt="Libros">
+                                        <label for="titulo">Enviar</label>
                                     </button>
                                 </div>
                             </div>

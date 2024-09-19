@@ -79,7 +79,7 @@
                                     <label for="email">Email:</label>
                                     <input type="email" class="form-control" id="email" placeholder="Email">
                                 </div>
-                                <div class="form-group col-md-12 mb-2">
+                                <div class="form-group col-md-12 mb-2 btn btn-warning">
                                     <label for="archivo">Déjanos tu archivo:</label>
                                     <input type="file" class="form-control" id="archivo">
                                 </div>
@@ -152,7 +152,17 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <h3 class="mb-4 btn btn-primary">** YA SOY CLIENTE **</h3>
+                        <!-- <h3 class="mb-4 btn btn-primary">** YA SOY CLIENTE **</h3> -->
+
+                        <form class="d-flex">
+                            <button class="btn btn-outline-back btn btn-primary" type="submit">Buscar</button>
+                            <input class="form-control me-2 ml-3" type="search" placeholder="Busas por DNI, Telefono o por Mail" aria-label="Search">
+
+
+                        </form>
+
+
+
                         <form id="soyClienteForm">
                             <div class="row">
                                 <div class="form-group col-sm-12  col-lg-6 col-xl-4 mb-2">
@@ -179,7 +189,7 @@
                                     <label for="emailCliente">Email:</label>
                                     <input type="email" disabled class="form-control" id="emailCliente" placeholder="Email">
                                 </div>
-                                <div class="form-group col-md-12 mb-2">
+                                <div class="form-group col-md-12 mb-2 btn btn-warning">
                                     <label for="archivoCliente">Déjanos tu archivo:</label>
                                     <input type="file" class="form-control" id="archivoCliente">
                                 </div>

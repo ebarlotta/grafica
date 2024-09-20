@@ -287,7 +287,7 @@
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-success btn-custom mb-4">
                                         <img src="{{ asset('fotos/imagen-cajas.jpg') }}" alt="Cajas y Bolsas">
-                                        <label for="titulo">Vajas y Bolsas</label>
+                                        <label for="titulo">Cajas y Bolsas</label>
                                     </button>
                                 </div>
                                 <div class="col-6 col-md-3">
@@ -305,11 +305,11 @@
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-info btn-custom mb-4">
                                         <img src="{{ asset('fotos/imagen-folletos.jpg') }}" alt="Folletos">
-                                        <label for="titulo">Merchandising</label>
+                                        <label for="titulo">Folletos</label>
                                     </button>
                                 </div>
                                 <div class="col-6 col-md-3">
-                                    <button class="btn btn-light btn-custom mb-4">
+                                    <button class="btn btn-danger btn-custom mb-4">
                                         <img src="{{ asset('fotos/imagen-revista.jpg') }}" alt="Revistas">
                                         <label for="titulo">Revistas</label>
                                     </button>

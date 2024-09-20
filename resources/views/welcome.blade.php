@@ -318,8 +318,10 @@
                                 {{--  NESECITO CONECTA ESTE BOTON MODULO PARA ENVIAR ARCHIVOS enviartrabajos.html ** --}}
                                 <div class="col-6 col-md-3">
                                     <button class="btn btn-dark btn-custom mb-4">
-                                        <img src="{{ asset('fotos/enviar.jpg') }}" alt="Libros">
-                                        <label for="titulo">Enviar</label>
+                                        <a href="{{ route('pedidos') }}">
+                                            <img src="{{ asset('fotos/enviar.jpg') }}" alt="Libros">
+                                            <label for="titulo">Enviar</label>
+                                        </a>
                                     </button>
                                 </div>
                             </div>

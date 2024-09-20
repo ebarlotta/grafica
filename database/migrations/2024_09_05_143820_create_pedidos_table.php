@@ -13,21 +13,27 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->string('cliente');
-            $table->string('nombre');
-            $table->string('email');
-            $table->string('telefono');
-            $table->string('direccion');
-            $table->string('geoposicion');
-            $table->unsignedBigInteger('tipodocumento');
-            $table->double('cantidadhojas');
-            $table->boolean('frentedorso');
-            $table->double('cantidadejemplares');
+            $table->unsignedBigInteger('cliente_id');
+            
             $table->string('archivo');
-            // $table->string('fechacreacion');
+            
+            $table->double('cantidadhojas');
+            $table->string('tipodeimpresion');
+            $table->string('tipodepapel');      // tipos de papel tabla
+            $table->boolean('frentedorso');     // 0ambas caras | 1 simple faz
+            $table->double('cantidadejemplares');
+
+            $table->string('metododeenvio');  // 1 Paso a buscarlo | 2 Enviar x delivery | 3 Enviar a direccion | 4 Otro
+            $table->string('lugardeentrega')->default('Local'); // tablas
+
+            $table->double('costoaproximado');
+
+            $table->string('tipodocumento'); // tablas
+
             $table->timestamps();
 
             $table->foreign('tipodocumento')->references('id')->on('tipodocumentos');
+            $table->foreign('cliente_id')->references('id')->on('clientes');
         });
     }
 

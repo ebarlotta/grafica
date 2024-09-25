@@ -341,88 +341,104 @@
                                     .gallery-img {
                                         width: 100%;
                                         height: auto;
-                                        padding: 5px;
+                                        /*max-height: 200px; /* Ajusta esta altura máxima según tus necesidades */
+                                        aspect-ratio: 1 / 1; /* Mantiene una proporción 1:1 para ancho y alto */
+                                        /* object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+                                        object-fit: contain;
                                     }
                                 </style>
+
+
 
                                 <div class="container mt-5">
                                     <div class="row">
                                         <!-- Fila 1 -->
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen1.jpg') }}" alt="Imagen 1" class="gallery-img">
+                                            <img src="{{ asset('fotos/Libros 01.jpg') }}" alt="Imagen 1" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen2.jpg') }}" alt="Imagen 2" class="gallery-img">
+                                            <img src="{{ asset('fotos/Libros 02.jpg') }}" alt="Imagen 2" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen3.jpg') }}" alt="Imagen 3" class="gallery-img">
+                                            <img src="{{ asset('fotos/Libros 03.jpg') }}" alt="Imagen 3" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen4.jpg') }}" alt="Imagen 4" class="gallery-img">
+                                            <img src="{{ asset('fotos/Libros 04.jpg') }}" alt="Imagen 4" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen5.jpg') }}" alt="Imagen 5" class="gallery-img">
+                                            <img src="{{ asset('fotos/Libros 05.jpg') }}" alt="Imagen 5" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen6.jpg') }}" alt="Imagen 6" class="gallery-img">
+                                            <img src="{{ asset('fotos/Libros 06.jpg') }}" alt="Imagen 6" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <!-- Fila 2 -->
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen7.jpg') }}" alt="Imagen 7" class="gallery-img">
+                                            <img src="{{ asset('fotos/remeras 01.jpg') }}" alt="Imagen 7" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen8.jpg') }}" alt="Imagen 8" class="gallery-img">
+                                            <img src="{{ asset('fotos/remeras 02.jpg') }}" alt="Imagen 8" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen9.jpg') }}" alt="Imagen 9" class="gallery-img">
+                                            <img src="{{ asset('fotos/remeras 03.jpg') }}" alt="Imagen 9" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen10.jpg') }}" alt="Imagen 10" class="gallery-img">
+                                            <img src="{{ asset('fotos/remeras 04.jpg') }}" alt="Imagen 10" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen11.jpg') }}" alt="Imagen 11" class="gallery-img">
+                                            <img src="{{ asset('fotos/remeras 05.jpg') }}" alt="Imagen 11" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen12.jpg') }}" alt="Imagen 12" class="gallery-img">
+                                            <img src="{{ asset('fotos/mercha 01.jpg') }}" alt="Imagen 12" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <!-- Fila 3 -->
+
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen13.jpg') }}" alt="Imagen 13" class="gallery-img">
+                                            <img src="{{ asset('fotos/estampado 01.jpg') }}" alt="Imagen 14" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen14.jpg') }}" alt="Imagen 14" class="gallery-img">
+                                            <img src="{{ asset('fotos/estampado 02.jpg') }}" alt="Imagen 15" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen15.jpg') }}" alt="Imagen 15" class="gallery-img">
+                                            <img src="{{ asset('fotos/estampado 03.jpg') }}" alt="Imagen 16" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen16.jpg') }}" alt="Imagen 16" class="gallery-img">
+                                            <img src="{{ asset('fotos/estampado 04.jpg') }}" alt="Imagen 17" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen17.jpg') }}" alt="Imagen 17" class="gallery-img">
-                                        </div>
-                                        <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen18.jpg') }}" alt="Imagen 18" class="gallery-img">
+                                            <img src="{{ asset('fotos/estampado 05.jpg') }}" alt="Imagen 18" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <!-- Fila 4 -->
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen19.jpg') }}" alt="Imagen 19" class="gallery-img">
+                                            <img src="{{ asset('fotos/estampado 06.jpg') }}" alt="Imagen 19" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen20.jpg') }}" alt="Imagen 20" class="gallery-img">
+                                            <img src="{{ asset('fotos/estampado 07.jpg') }}" alt="Imagen 20" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen21.jpg') }}" alt="Imagen 21" class="gallery-img">
+                                            <img src="{{ asset('fotos/cajas 01.jpg') }}" alt="Imagen 21" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen22.jpg') }}" alt="Imagen 22" class="gallery-img">
+                                            <img src="{{ asset('fotos/cajas 02.jpg') }}" alt="Imagen 22" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen23.jpg') }}" alt="Imagen 23" class="gallery-img">
+                                            <img src="{{ asset('fotos/cajas 03.jpg') }}" alt="Imagen 23" class="gallery-img img-fluid mb-3">
                                         </div>
                                         <div class="col-6 col-md-2">
-                                            <img src="{{ asset('fotos/imagen24.jpg') }}" alt="Imagen 24" class="gallery-img">
+                                            <img src="{{ asset('fotos/tarjetas 01.jpg') }}" alt="Imagen 24" class="gallery-img img-fluid mb-3">
                                         </div>
+                                        <div class="col-6 col-md-2">
+                                            <img src="{{ asset('fotos/ploter 01.jpg') }}" alt="Imagen 25" class="gallery-img img-fluid mb-3">
+                                        </div>
+                                        <div class="col-6 col-md-2">
+                                            <img src="{{ asset('fotos/ploter 02.jpg') }}" alt="Imagen 26" class="gallery-img img-fluid mb-3">
+                                        </div>
+                                        <div class="col-6 col-md-2">
+                                            <img src="{{ asset('fotos/rotulacion 01.jpg') }}" alt="Imagen 27" class="gallery-img img-fluid mb-3">
+                                        </div>
+                                        <div class="col-6 col-md-2">
+                                            <img src="{{ asset('fotos/etiquetas 01.jpg') }}" alt="Imagen 28" class="gallery-img img-fluid mb-3">
+                                        </div>
+
                                     </div>
                                 </div>
 

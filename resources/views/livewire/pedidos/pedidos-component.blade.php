@@ -1,7 +1,7 @@
 <div>
     <style>
         /* Centrar el modal verticalmente */
-        
+
         .modal-dialog {
             display: flex;
             align-items: center;
@@ -10,9 +10,10 @@
     </style>
 
         <!-- Modal Nuevo -->
-        {{-- <div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="mainModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false"> --}}
-            {{-- <div class="modal-dialog modal-dialog-centered"> --}}
-                <div class="modal-content" style="width: 30%;">
+        <div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="mainModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered">
+
+                <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="mainModalLabel">Elige tu opción</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -29,9 +30,9 @@
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">* Salir *</button>
                     </div>
                 </div>
-            {{-- </div> --}}
-        {{-- </div> --}}
-    
+            </div>
+        </div>
+
         <!-- SECCION Primeravez -->
         <div class="modal fade" id="primeravezModal" tabindex="-1" aria-labelledby="primeravezModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
@@ -131,7 +132,7 @@
                 </div>
             </div>
         </div>
-    
+
         <!-- SECCION Soy Cliente -->
         <div class="modal fade" id="soyClienteModal" tabindex="-1" aria-labelledby="soyClienteModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
@@ -143,14 +144,14 @@
                     <div class="modal-body">
                         <div class="container">
                             <!-- <h3 class="mb-4 btn btn-primary">** YA SOY CLIENTE **</h3> -->
-    
+
                             <form class="row-flex">
                                 <button class="form-group btn btn-outline-back col-3 me-2  mb-2 btn btn-primary" type="submit">Buscar</button>
                                 <input class="form-group form-control col-9 mb-3" type="search" placeholder="Buscar por DNI, Telefono o por Mail" aria-label="Search">
                             </form>
-    
-    
-    
+
+
+
                             <form id="soyClienteForm">
                                 <div class="row">
                                     <div class="form-group col-sm-12  col-lg-6 col-xl-4 mb-2">
@@ -240,7 +241,7 @@
                 </div>
             </div>
         </div>
-    
+
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script>
@@ -249,7 +250,7 @@
                 var mainModal = new bootstrap.Modal(document.getElementById('mainModal'));
                 mainModal.show();
             });
-    
+
             // Función para regresar al modal principal
             function showMainModal() {
                 var mainModal = new bootstrap.Modal(document.getElementById('mainModal'));
@@ -258,13 +259,13 @@
                 var currentModal = bootstrap.Modal.getInstance(document.querySelector('.modal.show'));
                 currentModal.hide();
             }
-    
+
             // Manejar el envío del formulario de "Mi Primera Vez"
             document.getElementById('primeravezForm').addEventListener('submit', function(event) {
                 event.preventDefault(); // Prevenir el envío real del formulario
                 showMainModal(); // Regresar al modal principal
             });
-    
+
             // Manejar el envío del formulario de "Ya Soy Cliente"
             document.getElementById('soyClienteForm').addEventListener('submit', function(event) {
                 event.preventDefault(); // Prevenir el envío real del formulario

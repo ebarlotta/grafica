@@ -147,6 +147,10 @@
                                         <label class="form-check-label" for="deliveryService">Enviar por delivery $</label>
                                     </div>
                                 </div>
+                                <div class="form-group col-sm-12 col-md-12 col-lg-4 mt-3 mb-2">
+                                    <label for="cantidadEjemplares">Observaciones:</label>
+                                    <textarea name="" id="" cols="60" rows="2"></textarea>
+                                </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-sm-12 col-md-12 col-lg-4 btn btn-danger">

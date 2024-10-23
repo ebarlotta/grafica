@@ -195,11 +195,13 @@
             <!-- Tarjeta de servicio 8 -->
             <div class="col-xl-3 col-sm-6 col-md-4 mb-4">
                 <div class="card h-100">
-                    <img class="card-img-top" src="fotos/enviar.jpg" alt="Enviar">
-                    <div class="card-body">
+                    <a href="{{ route('enviar') }}" style="text-decoration: none;">
+                        <img class="card-img-top" src="fotos/enviar.jpg" alt="Enviar">
+                        <div class="card-body">
                         <h4 class="card-title">Enviar</h4>
-                        <p class="card-text">Enviar archivos para el servicio de impresión.</p>
-                    </div>
+                            <p class="card-text">Enviar archivos para el servicio de impresión.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

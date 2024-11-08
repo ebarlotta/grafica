@@ -25,22 +25,8 @@ Route::get('/precios', PreciosComponent::class)->name('precios');
 Route::get('/tiposdocumentos', TiposdocumentosComponent::class)->name('tiposdocumentos');
 Route::get('/politicas', PoliticasComponent::class)->name('politicas');
 
-Route::get('/servicios', function () {
-    return view('servicios');
-})->name('servicios');
-
-Route::get('/nosotros', function () {
-    return view('nosotros');
-})->name('nosotros');
-
-Route::get('/galeria', function () {
-    return view('galeria');
-})->name('galeria');
-
-Route::get('/enviar', function () {
-    return view('enviar');
-})->name('enviar');
-
-Route::get('/contacto', function () {
-    return view('contacto');
-})->name('contacto');
+Route::get('/servicios', function () { return view('servicios'); })->name('servicios');
+Route::get('/nosotros', function () { return view('nosotros'); })->name('nosotros');
+Route::get('/galeria', function () { return view('galeria'); })->name('galeria');
+Route::get('/enviar', function () { return view('enviar'); })->name('enviar');
+Route::get('/contacto', function () { return view('contacto'); })->name('contacto');

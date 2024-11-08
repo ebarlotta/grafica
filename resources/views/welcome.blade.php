@@ -58,25 +58,25 @@
                     <a class="nav-link" href="#">Inicio <span class="visually-hidden">(actual)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://imprenta.gentepiola.net/public/servicios">Servicios</a>
+                    <a class="nav-link" href="{{ route('servicios') }}">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://imprenta.gentepiola.net/public/nosotros">Nosotros</a>
+                    <a class="nav-link" href="{{ route('nosotros') }}">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://imprenta.gentepiola.net/public/galeria">Galería de Img.</a>
+                    <a class="nav-link" href="{{ route('galeria') }}">Galería de Img.</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://imprenta.gentepiola.net/public/enviar">Enviar Archivo</a>
+                    <a class="nav-link" href="{{ route('enviar') }}">Enviar Archivo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://imprenta.gentepiola.net/public/login">Login</a>
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Registrarse</a>
+                    <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://imprenta.gentepiola.net/public/contacto">Contacto</a>
+                    <a class="nav-link" href="{{ route('contacto') }}">Contacto</a>
                 </li>
             </ul>
         </div>

@@ -8,7 +8,7 @@
     <style>
         /* Estilo para el encabezado hero */
         .hero {
-            background: url('/fotos/quines somos.jpg') no-repeat center center;
+            background: url('fotos/quines somos.jpg') no-repeat center center;
             background-size: cover;
             color: white;
             padding: 100px 0;
@@ -71,7 +71,7 @@
             <!-- Tarjeta de cada miembro del equipo -->
             <div class="col-md-4">
                 <div class="card h-100">
-                    <img src="/fotos/gente 01.jpg" class="card-img-top" alt="Miembro del equipo">
+                    <img src="fotos/gente 01.jpg" class="card-img-top" alt="Miembro del equipo">
                     <div class="card-body">
                         <h5 class="card-title">Nombre del Miembro</h5>
                         <p class="card-text">Descripción breve del miembro del equipo, su rol y experiencia.</p>
@@ -80,7 +80,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card h-100">
-                    <img src="/fotos/gente 02.jpg" class="card-img-top" alt="Miembro del equipo">
+                    <img src="fotos/gente 02.jpg" class="card-img-top" alt="Miembro del equipo">
                     <div class="card-body">
                         <h5 class="card-title">Nombre del Miembro</h5>
                         <p class="card-text">Descripción breve del miembro del equipo, su rol y experiencia.</p>
@@ -89,7 +89,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card h-100">
-                    <img src="/fotos/gente 03.jpg" class="card-img-top" alt="Miembro del equipo">
+                    <img src="fotos/gente 03.jpg" class="card-img-top" alt="Miembro del equipo">
                     <div class="card-body">
                         <h5 class="card-title">Nombre del Miembro</h5>
                         <p class="card-text">Descripción breve del miembro del equipo, su rol y experiencia.</p>

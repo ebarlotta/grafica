@@ -9,7 +9,7 @@
     <style>
         /* Estilo para el encabezado de la sección de contacto */
         .hero {
-            background: url('/fotos/contacto.jpg') no-repeat center center;
+            background: url('fotos/contacto.jpg') no-repeat center center;
             background-size: cover;
             color: white;
             padding: 100px 0;
@@ -69,9 +69,9 @@
             <!-- Información de contacto -->
             <div class="col-md-6">
                 <h3>Información de Contacto</h3>
-                <p><strong>Dirección:</strong> San Martin 287, La Rioja, Argentina</p>
-                <p><strong>Teléfono:</strong> +54 380 123456</p>
-                <p><strong>Email:</strong> contacto@grafilar.com</p>
+                <p><strong>Dirección:</strong> San Martin 287, La Rioja, Argentina *</p>
+                <p><strong>Teléfono:</strong> +54 380 4250007</p>
+                <p><strong>Email:</strong>grafiar@gmail.com</p>
                 <h3>Ubicación</h3>
                 <div id="map" style="height: 300px;"></div>
             </div>
@@ -93,4 +93,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
     <script>
     function initMap() {
-        var location = {lat: -29.4142, lng:
+        var location = {lat: -29.41690, lng: -66.85762};
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: location
+        });

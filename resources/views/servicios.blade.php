@@ -9,7 +9,7 @@
     <style>
         /* Estilo para el encabezado de la sección de servicios */
         .hero {
-            background: url('/fotos/mercha 02.png') no-repeat center center;
+            background: url('fotos/mercha 02.png') no-repeat center center;
             background-size: cover;
             color: white;
             padding: 100px 0;
@@ -60,7 +60,7 @@
             <!-- Servicio 1 -->
             <div class="col-md-4 d-flex">
                 <div class="card">
-                    <img src="/fotos/fotocopiadora.jpg" class="card-img-top" alt="Fotocopias">
+                    <img src="fotos/fotocopiadora.jpg" class="card-img-top" alt="Fotocopias">
                     <div class="card-body">
                         <h5 class="card-title">Fotocopias</h5>
                         <p class="card-text">Hacemos para vos esas fotocopias que siempre estás necesitando, fácil, de calidad y encuadernado de la forma que te gusta.</p>
@@ -70,7 +70,7 @@
             <!-- Servicio 2 -->
             <div class="col-md-4 d-flex">
                 <div class="card">
-                    <img src="/fotos/encuadernacion.jpg" class="card-img-top" alt="Encuadernación">
+                    <img src="fotos/encuadernacion.jpg" class="card-img-top" alt="Encuadernación">
                     <div class="card-body">
                         <h5 class="card-title">Encuadernación</h5>
                         <p class="card-text">Tenemos diversos sistemas de encuadernación. Elige el que más se adecue a tus expectativas.</p>
@@ -80,7 +80,7 @@
             <!-- Servicio 3 -->
             <div class="col-md-4 d-flex">
                 <div class="card">
-                    <img src="/fotos/servicios varios.jpg" class="card-img-top" alt="Varios">
+                    <img src="fotos/servicios varios.jpg" class="card-img-top" alt="Varios">
                     <div class="card-body">
                         <h5 class="card-title">Servicios varios</h5>
                         <p class="card-text">Descripción breve del Servicio 3. Explicación sobre cómo puede beneficiar a los clientes.</p>

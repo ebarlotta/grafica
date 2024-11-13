@@ -61,7 +61,7 @@
                     <a class="nav-link" href="{{ route('servicios') }}">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('nosotros') }}">Nosotros</a>
+                    <a class="nav-link" href="{{ route('nosotros') }}">Nosotros *</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('galeria') }}">Galería de Img.</a>

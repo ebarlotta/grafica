@@ -234,8 +234,8 @@
                     <h5 class="text-uppercase">Contacto</h5>
                     <ul class="list-unstyled mb-0">
                         <li class="text-dark">San Martin 287, La Rioja, Argentina</li>
-                        <li class="text-dark">Tel: +54 380 123456</li>
-                        <li class="text-dark">Email: contacto@grafilar.com</li>
+                        <li class="text-dark">Tel: +54 380 4250007</li>
+                        <li class="text-dark">Email: grafilar@gmail.com</li>
                     </ul>
                 </div>
             </div>
@@ -266,5 +266,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
->>>>>>> 1d19b78e5e4da27941b8a0dfcf42c56b0f080836
+
 </html>

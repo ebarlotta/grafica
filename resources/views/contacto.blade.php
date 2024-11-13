@@ -69,7 +69,7 @@
             <!-- Información de contacto -->
             <div class="col-md-6">
                 <h3>Información de Contacto</h3>
-                <p><strong>Dirección:</strong> San Martin 287, La Rioja, Argentina *</p>
+                <p><strong>Dirección:</strong> San Martin 287, La Rioja, Argentina -</p>
                 <p><strong>Teléfono:</strong> +54 380 4250007</p>
                 <p><strong>Email:</strong>grafiar@gmail.com</p>
                 <h3>Ubicación</h3>

@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
                                     <label for="cantidadHojas">Cantidad de Hojas:</label>
-                                    <input type="number" class="form-control" id="cantidadHojas" placeholder="Cantidad de Hojas">
+                                    <input type="number" class="form-control" wire:model="cantidadHojas" placeholder="Cantidad de Hojas">
                                 </div>
                                 <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
                                     <label for="tipoImpresion">Tipo de Impresión:</label>

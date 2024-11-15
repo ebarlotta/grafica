@@ -10,16 +10,26 @@ class Pedido extends Model
     use HasFactory;
 
     protected $fillable=[
-        'cliente',
+        'cliente_id',
         'nombre',
-        'email',
         'telefono',
         'direccion',
-        'geoposicion',
-        'tipo_documento',
-        'cantidad_hojas',
-        'frente_dorso',
-        'cantidad_ejemplares',
+        'dni',
+        'cuit',
+        'institucion',
+        'email',
         'archivo',
+        'cantidadhojas',
+        'tipodeimpresion',
+        'tipodocumento',
+        'tamanopapel',
+        'tipodepapel',
+        'frentedorso',
+        'cantidadejemplares',
+        'retiraenlocal',
+        'lugardeentrega',
+        'geoposicion',
+        'observaciones',
+        'costoaprox',
     ];
 }

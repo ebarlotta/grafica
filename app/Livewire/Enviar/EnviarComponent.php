@@ -50,6 +50,7 @@ class EnviarComponent extends Component
             'cuit' => $this->cuit,
             'institucion' => $this->institucion,
             'email' => $this->email,
+            'estado_id' => 1,
             'archivo' => $this->photo->store('photos'),
             'cantidadhojas' => $this->cantidadhojas,
             'tipodocumento' => 1, //$this->tipodocumento,
@@ -61,8 +62,9 @@ class EnviarComponent extends Component
             'retiraenlocal' => 1, // $this->retiraenlocal,
             'geoposicion' => 1, //$this->geoposicion,
             'observaciones' => '', //$this->observaciones,
-            'costoaprox' =>2625,
+            'costoaprox' =>26225,
         ]);
+        session()->flash('message', 'Pedido Enviado!!!');
         // dd($pedidos);
     }
 }

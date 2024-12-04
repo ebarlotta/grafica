@@ -37,11 +37,13 @@ return new class extends Migration
             $table->string('observaciones'); // tablas
 
             $table->double('costoaprox');
+            $table->unsignedBigInteger('estado_id');
 
             $table->timestamps();
 
             $table->foreign('tipodocumento')->references('id')->on('tipodocumentos');
             $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->foreign('estado_id')->references('id')->on('estados');
         });
     }
 

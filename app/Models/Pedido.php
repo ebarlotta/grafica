@@ -22,6 +22,7 @@ class Pedido extends Model
         'cantidadhojas',
         'tipodeimpresion',
         'tipodocumento',
+        'estado_id',
         'tamanopapel',
         'tipodepapel',
         'frentedorso',

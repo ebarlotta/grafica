@@ -13,8 +13,10 @@ class EstadoSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('estados')->insert(['name'=>'Para imprimir','active'=>true]);
-        DB::table('estados')->insert(['name'=>'Enviado','active'=>true]);
+        DB::table('estados')->insert(['name'=>'Recibido','active'=>true]);
+        DB::table('estados')->insert(['name'=>'En proceso','active'=>true]);
         DB::table('estados')->insert(['name'=>'Impreso','active'=>true]);
+        DB::table('estados')->insert(['name'=>'Para Enviar','active'=>true]);
+        DB::table('estados')->insert(['name'=>'Entregado','active'=>true]);
     }
 }

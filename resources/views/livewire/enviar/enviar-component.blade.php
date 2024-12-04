@@ -110,12 +110,12 @@
         </div>
     
         <div class="row mt-3">
-            <div class="col-sm-12 col-md-12 col-lg-4 btn btn-danger">
+            {{-- <div class="col-sm-12 col-md-12 col-lg-4 btn btn-danger">
                 <h4 class="marg">Costo Aprox: $ {{ $costoaprox }}</h4>
-            </div>
+            </div> --}}
             
             <div class="col-md-8">
-                <button type="submit">Save Photo</button>
+                {{-- <button type="submit">Save Photo</button> --}}
 
                 <button type="submit" class="btn btn-primary mt-3">Enviar</button>
             </div>

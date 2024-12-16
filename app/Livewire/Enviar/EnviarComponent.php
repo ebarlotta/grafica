@@ -34,7 +34,9 @@ class EnviarComponent extends Component
 
     public function render()
     {
-        return view('livewire.enviar.enviar-component')->extends('adminlte::page');
+        return view('livewire.enviar.enviar-component')->extends('layouts.app');
+        // return view('livewire.enviar.enviar-component');
+        // return view('livewire.enviar.enviar-component')->extends('adminlte::page');
     }
 
     public function save() {
@@ -51,7 +53,7 @@ class EnviarComponent extends Component
             'institucion' => $this->institucion,
             'email' => $this->email,
             'estado_id' => 1,
-            'archivo' => $this->photo->store('photos'),
+            'archivo' => $this->photo->store('public/photos'),
             'cantidadhojas' => $this->cantidadhojas,
             'tipodocumento' => 1, //$this->tipodocumento,
             'tipodeimpresion' => $this->tipodeimpresion,

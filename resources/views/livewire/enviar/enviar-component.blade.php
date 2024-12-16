@@ -109,7 +109,7 @@
             </div>
         </div>
     
-        <div class="row mt-3">
+        <div class="row mt-3 mx-3">
             {{-- <div class="col-sm-12 col-md-12 col-lg-4 btn btn-danger">
                 <h4 class="marg">Costo Aprox: $ {{ $costoaprox }}</h4>
             </div> --}}

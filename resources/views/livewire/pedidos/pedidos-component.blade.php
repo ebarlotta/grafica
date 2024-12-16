@@ -1,343 +1,89 @@
 <div>
-    {{-- @extends('layouts.app') --}}
+    @if (session()->has('message'))
+        <div class="rounded-md bg-gren-300 px-6 py-1 mx-2 mt-3" role="alert" style="background-color: lightgreen;">
+            {{ session('message') }}
+        </div>
+    @endif
 
-        {{-- Valor de Principal {{ $principal }} --}}
-        @if($principal)
-            {{-- <div class="modal fade" id="mainModal" tabindex="-1" aria-labelledby="mainModalLabel" aria-hidden="true" > --}}
-                {{-- <div class="modal-dialog modal-dialog-centered"> --}}
-                    {{-- <div class="modal-content"> --}}
-                        {{-- <div class="modal-header">
-                            <h5 class="modal-title" id="mainModalLabel">Elige tu opción</h5> --}}
-                            {{-- FALTA --}}
-                            {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div> --}}                       
-                            <div>
-                                <button type="button" class="btn btn-danger mt-3 fw-bold" style="width: 200px; height: 55px;" wire:click="MostrarPrimeraVez()">Mi Primera Vez</button>
-                            </div>
-                            <div>
-                                <button type="button" class="btn btn-primary mt-3 fw-bold" style="width: 200px; height: 55px;" wire:click="MostrarSoyCliente()">Ya Soy Cliente</button>
-                            </div>
-                        {{-- </div> --}}
-                        {{-- <div class="modal-footer"> --}}
-                            {{-- FALTA --}}
-                            <a href="/">
-                                <button type="button" class="btn btn-secondary">* Salir *</button>
-                            </a>
-                        {{-- </div> --}}
-                    {{-- </div> --}}
-                {{-- </div> --}}
-            {{-- </div> --}}
-        @endif
-            
-        <!-- SECCION Primeravez -->
-        @if($primeravez)
+<table class="table table-flex table-striped">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>lugardeentrega</th>
+            <th>Propietario</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($pedidos as $pedido) 
+            <tr 
+            @if($pedido->estado->name=='Recibido') style="background-color: coral;" @endif
+            @if($pedido->estado->name=='En proceso') style="background-color: yellow;" @endif
+            @if($pedido->estado->name=='Impreso') style="background-color: green;" @endif
+            @if($pedido->estado->name=='Para Enviar') style="background-color: lightsalmon;" @endif
+            @if($pedido->estado->name=='Entregado') style="background-color: lightgreen;" @endif
 
-          
-
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" wire:click="OcultarPrimeraVez()"  aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <h3 class="mb-4 btn btn-danger">Tus datos para conocerte</h3>
-                        <form id="primeravezForm">
-                            <div class="row">
-                                <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                    <label for="nombre">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Escribe tu Nombre">
-                                </div>
-                                <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                    <label for="telefono">Teléfono:</label>
-                                    <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
-                                </div>
-                                <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                    <label for="direccion">Dirección:</label>
-                                    <input type="text" class="form-control" id="direccion" placeholder="Dirección">
-                                </div>
-                                <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                    <label for="dni">DNI:</label>
-                                    <input type="text" class="form-control" id="dni" placeholder="DNI">
-                                </div>
-                                <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                    <label for="institucion">Institución:</label>
-                                    <input type="text" class="form-control" id="institucion" placeholder="Institución">
-                                </div>
-                                <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                    <label for="email">Email:</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
-                                </div>
-                                <div class="form-group col-md-12 mb-2 btn btn-warning">
-                                    <label for="archivo">Déjanos tu archivo:</label>
-                                    <input type="file" class="form-control" id="archivo">
-                                </div>
-                                <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                    <label for="cantidadHojas">Cantidad de Hojas:</label>
-                                    <input type="number" class="form-control" id="cantidadHojas" placeholder="Cantidad de Hojas">
-                                </div>
-                                <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                    <label for="tipoImpresion">Tipo de Impresión:</label>
-                                    <select id="tipoImpresion" class="form-control">
-                                    <option selected>Seleccionar...</option>
-                                    <option>Laser color</option>
-                                    <option>Laser B/N</option>
-                                </select>
-                                </div>
-                                <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                    <label for="tipoPapel">Tipo de Papel:</label>
-                                    <select id="tipoPapel" class="form-control">
-                                    <option selected>Seleccionar...</option>
-                                    <option>Obra de 80 Grs</option>
-                                    <option>Obra de 90 Grs</option>
-                                    <option>Obra de 115 Grs</option>
-                                </select>
-                                </div>
-                                <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                    <label for="simpleDobleFas">Simple o Doble Faz:</label>
-                                    <select id="simpleDobleFas" class="form-control">
-                                    <option selected>Seleccionar...</option>
-                                    <option>Simple Faz</option>
-                                    <option>Doble Faz</option>
-                                </select>
-                                </div>
-                                <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                    <label for="cantidadEjemplares">Cantidad de Ejemplares:</label>
-                                    <input type="number" class="form-control" id="cantidadEjemplares" placeholder="Cantidad de Ejemplares">
-                                </div>
-                                <div class="form-group col-sm-12 col-md-12 col-lg-4 mt-3 mb-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="deliveryOptions" id="homePickup" value="homePickup" checked>
-                                        <label class="form-check-label" for="homePickup">Retira por El Local</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="deliveryOptions" id="deliveryService" value="deliveryService">
-                                        <label class="form-check-label" for="deliveryService">Enviar por delivery $</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-sm-12 col-md-12 col-lg-4 btn btn-danger">
-                                    <h4 class="marg">Costo Aprox: $5780.45</h4>
-                                </div>
-                                <div class="col-md-8">
-                                    <button type="submit" class="btn btn-primary mt-3" wire:click="OcultarPrimeraVez()">Enviar</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" wire:click="OcultarPrimeraVez()">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-          
-          
-            <div class="modal fade" id="primeravezModal" tabindex="-1" aria-labelledby="primeravezModalLabel" aria-hidden="true"> --}}
-                <div class="modal-dialog modal-xl modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="primeravezModalLabel">FORMULARIO DE ENVIO DE ARCHIVOS - PRIMERA VEZ</h5>
-                            <button type="button" class="btn-close" wire:click="OcultarPrimeraVez()" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container">
-                                <h3 class="mb-4 btn btn-danger">Tus datos para conocerte</h3>
-                                <form id="primeravezForm">
-                                    <div class="row">
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="nombre">Nombre:</label>
-                                            <input type="text" class="form-control" id="nombre" placeholder="Escribe tu Nombre">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="telefono">Teléfono:</label>
-                                            <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="direccion">Dirección:</label>
-                                            <input type="text" class="form-control" id="direccion" placeholder="Dirección">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="dni">DNI:</label>
-                                            <input type="text" class="form-control" id="dni" placeholder="DNI">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="institucion">Institución:</label>
-                                            <input type="text" class="form-control" id="institucion" placeholder="Institución">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="email">Email:</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Email">
-                                        </div>
-                                        <div class="form-group col-md-12 mb-2 btn btn-warning">
-                                            <label for="archivo">Déjanos tu archivo:</label>
-                                            <input type="file" class="form-control" id="archivo">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="cantidadHojas">Cantidad de Hojas:</label>
-                                            <input type="number" class="form-control" id="cantidadHojas" placeholder="Cantidad de Hojas">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="tipoImpresion">Tipo de Impresión:</label>
-                                            <select id="tipoImpresion" class="form-control">
-                                            <option selected>Seleccionar...</option>
-                                            <option>Laser color</option>
-                                            <option>Laser B/N</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="tipoPapel">Tipo de Papel:</label>
-                                            <select id="tipoPapel" class="form-control">
-                                            <option selected>Seleccionar...</option>
-                                            <option>Obra de 80 Grs</option>
-                                            <option>Obra de 90 Grs</option>
-                                            <option>Obra de 115 Grs</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="simpleDobleFas">Simple o Doble Faz:</label>
-                                            <select id="simpleDobleFas" class="form-control">
-                                            <option selected>Seleccionar...</option>
-                                            <option>Simple Faz</option>
-                                            <option>Doble Faz</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="cantidadEjemplares">Cantidad de Ejemplares:</label>
-                                            <input type="number" class="form-control" id="cantidadEjemplares" placeholder="Cantidad de Ejemplares">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-md-12 col-lg-4 mt-3 mb-2">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="deliveryOptions" id="homePickup" value="homePickup" checked>
-                                                <label class="form-check-label" for="homePickup">Retira por El Local</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="deliveryOptions" id="deliveryService" value="deliveryService">
-                                                <label class="form-check-label" for="deliveryService">Enviar por delivery $</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-sm-12 col-md-12 col-lg-4 btn btn-danger">
-                                            <h4 class="marg">Costo Aprox: $5780.45</h4>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <button type="submit" class="btn btn-primary mt-3" wire:click="OcultarPrimeraVez()">Enviar</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+            >
+                <td>{{ date_format($pedido->created_at,'d-m-Y')  }}</td>
+                <td>{{ $pedido->lugardeentrega }}</td>
+                <td>{{ $pedido->nombre }}</td>
+                <td>{{ $pedido->estado->name }}</td>
+                <td>
+                    <div class="flex justify-center">
+                        <a href="{{ 'storage/' . substr($pedido->archivo,7) }}" target="_blank">
+                            {{-- <a href="{{ asset('storage/app/'.$pedido->archivo) }}"> --}}
+                        <!-- Desde 640 en adelante -->
+                        <button class="hidden lg:flex bg-blue-300 hover:bg-blue-400 text-black-900 font-bold py-2 px-4 mr-2 rounded">
+                            {{-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                            </svg> --}}
+                            Descargar
+                        </button>
+                        <!-- Menos 640 en adelante -->
+                        <button class="lg:hidden bg-blue-300 hover:bg-blue-400 text-black-900 font-bold py-1 px-1 mt-1 rounded">
+                            {{-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                            </svg> --}}
+                        </button>
+                        </a>
+                        <div>
+                            <button class="btn btn-info" wire:click="CargarEstado({{ $pedido->id }})">Cambiar Estado</button>
                         </div>
                     </div>
-                </div>
-            </div>
-        @endif
-
-        <!-- SECCION Soy Cliente -->
-        @if($soycliente)
-            <div class="modal fade" id="soyClienteModal" tabindex="-1" aria-labelledby="soyClienteModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="soyClienteModalLabel">FORMULARIO DE YA SOY CLIENTE</h5>
-                            <button type="button" class="btn-close"  wire:click="OcultarSoyCliente()" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container">
-                                <form class="row-flex">
-                                    <button class="form-group btn btn-outline-back col-3 me-2 mb-2 btn btn-primary" type="submit">Buscar</button>
-                                    <input class="form-group form-control col-9 mb-3" type="search" placeholder="Buscar por DNI, Telefono o por Mail" aria-label="Search">
-                                </form>
-                                <form id="soyClienteForm">
-                                    <div class="row">
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="nombreCliente">Nombre:</label>
-                                            <input type="text" disabled class="form-control" id="nombreCliente" placeholder="Escribe tu Nombre">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="telefonoCliente">Teléfono:</label>
-                                            <input type="text" disabled class="form-control" id="telefonoCliente" placeholder="Teléfono">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="direccionCliente">Dirección:</label>
-                                            <input type="text" disabled class="form-control" id="direccionCliente" placeholder="Dirección">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="dniCliente">DNI:</label>
-                                            <input type="text" disabled class="form-control" id="dniCliente" placeholder="DNI">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="institucionCliente">Institución:</label>
-                                            <input type="text" disabled class="form-control" id="institucionCliente" placeholder="Institución">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="emailCliente">Email:</label>
-                                            <input type="email" disabled class="form-control" id="emailCliente" placeholder="Email">
-                                        </div>
-                                        <div class="form-group col-md-12 mb-2 btn btn-warning">
-                                            <label for="archivoCliente">Déjanos tu archivo:</label>
-                                            <input type="file" class="form-control" id="archivoCliente">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="cantidadHojasCliente">Cantidad de Hojas:</label>
-                                            <input type="number" class="form-control" id="cantidadHojasCliente" placeholder="Cantidad de Hojas">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="tipoImpresionCliente">Tipo de Impresión:</label>
-                                            <select id="tipoImpresionCliente" class="form-control">
-                                            <option selected>Seleccionar...</option>
-                                            <option>Laser color</option>
-                                            <option>Laser B/N</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="tipoPapelCliente">Tipo de Papel:</label>
-                                            <select id="tipoPapelCliente" class="form-control">
-                                            <option selected>Seleccionar...</option>
-                                            <option>Obra de 80 Grs</option>
-                                            <option>Obra de 90 Grs</option>
-                                            <option>Obra de 115 Grs</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="simpleDobleFasCliente">Simple o Doble Faz:</label>
-                                            <select id="simpleDobleFasCliente" class="form-control">
-                                            <option selected>Seleccionar...</option>
-                                            <option>Simple Faz</option>
-                                            <option>Doble Faz</option>
-                                        </select>
-                                        </div>
-                                        <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                                            <label for="cantidadEjemplaresCliente">Cantidad de Ejemplares:</label>
-                                            <input type="number" class="form-control" id="cantidadEjemplaresCliente" placeholder="Cantidad de Ejemplares">
-                                        </div>
-                                        <div class="form-group col-sm-12 col-md-12 col-lg-4 mt-3 mb-2">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="deliveryOptionsCliente" id="homePickupCliente" value="homePickupCliente" checked>
-                                                <label class="form-check-label" for="homePickupCliente">Retira por El Local</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="deliveryOptionsCliente" id="deliveryServiceCliente" value="deliveryServiceCliente">
-                                                <label class="form-check-label" for="deliveryServiceCliente">Enviar por delivery $</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-sm-12 col-md-12 col-lg-4 btn btn-danger">
-                                            <h4 class="marg">Costo Aprox: $5780.45</h4>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <button type="reset" class="btn btn-warning mt-3">Limpiar campos</button>
-                                            <button type="button" class="btn btn-primary mt-3" wire:click="OcultarSoyCliente()">Enviar</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
-
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+<div>
+    Estado: {{ $estados_id }}
 </div>
+    @if($CambioEstado==true)      
+        
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">{{ $pedido_name }} </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" wire:click="OcultarCambioEstado()"></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                <select wire:model="estados_id" >
+                    @foreach($estados as $estado)
+                        <option {{ $estado->id }}>{{$estado->name}}</option>
+                    @endforeach
+                </select>
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" wire:click="OcultarCambioEstado()">Cerrar</button>
+              <button type="button" class="btn btn-primary" wire:click="CambiarEstado()">Cambiar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    @endif
+    
+    </div>

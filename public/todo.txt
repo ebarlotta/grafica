@@ -2,4 +2,9 @@ Envío
 - Mostrar un cartel de archivo enviado modal
 - Eliminar todos los datos de cantidad de hojas, etc al enviar un archivo y dejar los datos del cliente
 - Agregar Botones de Limpiar y Volver
+- Convenios-> hacer crud 
 
+- Definir precios en los tipos de papeles. guardar los datos en una tabla
+- Terminar de hacer los Datos  útiles de impresión
+
+- Hacer funcionar interfaz de contactos

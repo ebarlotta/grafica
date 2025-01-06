@@ -59,8 +59,6 @@ public function CargarDatos($id) {
 
 }
 
-
-
 public function CambiarEstado() {
     $estado = Estado::where('name','=',$this->estados_id)->get();
 // dd($estado);

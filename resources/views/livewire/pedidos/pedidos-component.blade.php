@@ -4,8 +4,8 @@
             {{ session('message') }}
         </div>
     @endif
-
-    <table class="" style="width: 100%">
+<div class="mx-4 mr-4">
+    <table style="width: 100%">
         <thead>
             <tr>
                 <th>Fecha</th>
@@ -85,7 +85,7 @@
             <x-button  class="btn btn-info" wire:click="OcultarDatos()">Cerrar</x-button>
         </x-slot>
     </x-dialog-modal>
-
+</div>
     <!-- Modal -->
     {{-- <div class="modal fade" id="exampleModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

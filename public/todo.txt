@@ -1,10 +1,12 @@
 Envío
-- Mostrar un cartel de archivo enviado modal
-- Eliminar todos los datos de cantidad de hojas, etc al enviar un archivo y dejar los datos del cliente
-- Agregar Botones de Limpiar y Volver
+- Terminar de hacer los Datos útiles de impresión -> Realizado 06/01/2025
+- Mostrar un cartel de archivo enviado modal -> Realizado 07/01/2025
+- Eliminar todos los datos de cantidad de hojas, etc al enviar un archivo y dejar los datos del cliente -> Realizado 07/01/2025
+- Ajustar ancho del formulario de Enviar -> Realizado 07/01/2025
+- Definir precios en los tipos de papeles. guardar los datos en una tabla -> Relizado 15/01/2025
+
 - Convenios-> hacer crud 
 
-- Definir precios en los tipos de papeles. guardar los datos en una tabla
-- Terminar de hacer los Datos  útiles de impresión
+- Agregar Botones de Limpiar y Volver -> Se decide no hacerlo porque no se ve estetico
 
 - Hacer funcionar interfaz de contactos

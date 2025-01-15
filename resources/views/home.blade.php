@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container col-12">
     <div class="row justify-content-center">
 
         {{--  desde aca se costruye la pagina  --}}
@@ -149,105 +149,11 @@
 
         {{--  FIN DE BOTONES   --}}
 
-        <h2 class="row justify-content-center">GALERIA DE TRABAJOS</h2>
-
-        {{--  INICIO DE GALERIA DE IMAGEN  --}}
-
-
-            <style>
-                .gallery-img {
-                    width: 100%;
-                    height: auto;
-                    padding: 5px;
-                }
-            </style>
-
-            <div class="container mt-5">
-                <div class="row">
-                    <!-- Fila 1 -->
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen1.jpg') }}" alt="Imagen 1" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen2.jpg') }}" alt="Imagen 2" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen3.jpg') }}" alt="Imagen 3" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen4.jpg') }}" alt="Imagen 4" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen5.jpg') }}" alt="Imagen 5" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen6.jpg') }}" alt="Imagen 6" class="gallery-img">
-                    </div>
-                    <!-- Fila 2 -->
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen7.jpg') }}" alt="Imagen 7" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen8.jpg') }}" alt="Imagen 8" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen9.jpg') }}" alt="Imagen 9" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen10.jpg') }}" alt="Imagen 10" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen11.jpg') }}" alt="Imagen 11" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen12.jpg') }}" alt="Imagen 12" class="gallery-img">
-                    </div>
-                    <!-- Fila 3 -->
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen13.jpg') }}" alt="Imagen 13" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen14.jpg') }}" alt="Imagen 14" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen15.jpg') }}" alt="Imagen 15" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen16.jpg') }}" alt="Imagen 16" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen17.jpg') }}" alt="Imagen 17" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen18.jpg') }}" alt="Imagen 18" class="gallery-img">
-                    </div>
-                    <!-- Fila 4 -->
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen19.jpg') }}" alt="Imagen 19" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen20.jpg') }}" alt="Imagen 20" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen21.jpg') }}" alt="Imagen 21" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen22.jpg') }}" alt="Imagen 22" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen23.jpg') }}" alt="Imagen 23" class="gallery-img">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('fotos/imagen24.jpg') }}" alt="Imagen 24" class="gallery-img">
-                    </div>
-                </div>
-            </div>
-
         {{--  FIN DE GALERIA DE IMAGENES  --}}
 
         {{--  Incio del Footer  --}}
 
-        <footer class="bg-dark text-white pt-4">
+        <footer class="bg-dark text-white pt-4 col-12">
             <div class="container">
                 <div class="row">
                     <!-- Datos Útiles -->

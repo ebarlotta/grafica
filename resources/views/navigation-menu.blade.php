@@ -12,8 +12,24 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <a class="navbar-brand text-success fw-bold mt-3" href="home"><b>Grafilar</b></a>
                     <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                         {{ __('home') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('servicios') }}" :active="request()->routeIs('servicios')">
+                        {{ __('Servicios') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('nosotros') }}" :active="request()->routeIs('nosotros')">
+                        {{ __('Nosotros') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('galeria') }}" :active="request()->routeIs('galeria')">
+                        {{ __('Galería de Img.') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('enviar') }}" :active="request()->routeIs('enviar')">
+                        {{ __('Enviar Archivo') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('contacto') }}" :active="request()->routeIs('contacto')">
+                        {{ __('Contacto') }}
                     </x-nav-link>
                 </div>
             </div>

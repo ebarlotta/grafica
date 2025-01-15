@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('precios', function (Blueprint $table) {
+        Schema::create('lados', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tipodocumento');
-            $table->double('preciobase');
+            $table->string('lados');
+            $table->double('factor');
             $table->boolean('activo')->default(true);
             $table->timestamps();
-            
-            $table->foreign('tipodocumento')->references('id')->on('tipodocumentos');
-
         });
     }
 
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('precios');
+        Schema::dropIfExists('lados');
     }
 };

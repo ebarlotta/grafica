@@ -18,11 +18,11 @@
         <tbody>
             @foreach($pedidos as $pedido) 
                 <tr 
-                @if($pedido->estado->name=='Recibido') style="background-color: coral;" @endif
-                @if($pedido->estado->name=='En proceso') style="background-color: yellow;" @endif
-                @if($pedido->estado->name=='Impreso') style="background-color: green;" @endif
-                @if($pedido->estado->name=='Para Enviar') style="background-color: lightsalmon;" @endif
-                @if($pedido->estado->name=='Entregado') style="background-color: lightgreen;" @endif
+                @if($pedido->estado->name=='Recibido') style="background-color: white;" @endif
+                @if($pedido->estado->name=='En proceso') style="background-color: #FFCF30;" @endif
+                @if($pedido->estado->name=='Impreso') style="background-color:  #A8CF45;" @endif
+                @if($pedido->estado->name=='Para Enviar') style="background-color: ligthblue;" @endif
+                @if($pedido->estado->name=='Entregado')  class="font-weight-bold" style="background-color: grey; color:white; " @endif
 
                 >
                     <td>{{ date_format($pedido->created_at,'d-m-Y')  }}</td>

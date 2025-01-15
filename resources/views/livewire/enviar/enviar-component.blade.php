@@ -4,7 +4,7 @@
             {{ session('message') }}
         </div>
     @endif
-    <form wire:submit.prevent="save">
+    <form wire:submit.prevent="save" class="col-10 mx-auto mt-4">
         <div class="row">
             <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
                 <label for="nombre">Nombre:</label>
@@ -34,9 +34,9 @@
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" wire:model="email" placeholder="Email">
             </div>
-            <div class="form-group col-md-12 mb-2 btn btn-warning">
+            <div class="form-group col-7 mb-2 btn btn-warning ml-3" style="height: fit-content;margin-top: 2%;">
                 <label for="archivo">Déjanos tu archivo:</label>
-                <input type="file" wire:model="photo">
+                <input type="file" wire:model="photo" class="ml-2 w-full">
                 @error('photo') <span class="error">{{ $message }}</span> @enderror
                 {{-- <input type="file" class="form-control" id="archivo"> --}}
             </div>
@@ -49,13 +49,26 @@
             <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
                 <label for="tipoImpresion">Tipo de Impresión:</label>
                 <select id="tipoImpresion" class="form-control" wire:model="tipodeimpresion">
-                    <option selected>Seleccionar...</option>
-                    <option value="1">Laser color</option>
-                    <option value="2">Laser B/N</option>
+                    <option value="">-- Seleccione un sistema</option>
+                    @foreach ($sistemas as $sistema)
+                        <option value="{{ $sistema->factor }}">{{ $sistema->sistema }}</option>
+                    @endforeach
+                </select>
                 </select>
             </div>
 
             <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
+                <label for="simpleDobleFas">Simple o Doble Faz:</label>
+                <select class="form-control" wire:model="frentedorso">
+                    <option value="">-- Seleccione un lado</option>
+                    @foreach ($lados as $lado)
+                        <option value="{{ $lado->factor }}">{{ $lado->lados }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+
+            {{-- <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
                 <label for="tamanoPapelCliente">Tamaño de Papel:</label>
                 <select class="form-control" wire:model="tamanopapel">
                     <option selected>Seleccionar...</option>
@@ -66,24 +79,16 @@
                     <option value="5">1/2 Oficio</option>
                     <option value="6">Oficio</option>
                 </select>
-            </div>
+            </div> --}}
 
             <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
                 <label for="tipodepapel">Tipo de Papel:</label>
                 <select class="form-control" wire:model="tipodepapel">
-                    <option selected>Seleccionar...</option>
-                    <option value="1">Obra de 80 Grs</option>
-                    <option value="2">Obra de 90 Grs</option>
-                    <option value="3">Obra de 115 Grs</option>
+                    <option value="">-- Seleccione un gramaje</option>
+                    @foreach ($gramajes as $gramaje)
+                        <option value="{{ $gramaje->precio }}">{{ $gramaje->gramaje }} - {{ $gramaje->tamano_papel }}</option>
+                    @endforeach
                 </select>
-            </div>
-
-            <div class="form-group col-sm-12 col-lg-6 col-xl-4 mb-2">
-                <label for="simpleDobleFas">Simple o Doble Faz:</label>
-                <select class="form-control" wire:model="frentedorso">
-                    <option selected>Seleccionar...</option>
-                    <option value="1">Simple Faz</option>
-                    <option value="2">Doble Faz</option>
                 </select>
             </div>
 
@@ -107,18 +112,36 @@
                 <label for="cantidadEjemplares">Observaciones:</label>
                 <textarea name="" id="" cols="60" rows="2">{{ $observaciones }}</textarea>
             </div>
+            <div class="form-group col-sm-6 col-md-6 col-lg-4 mt-3 mb-2">
+                <label for="cantidadEjemplares">Costo Aproximado:</label>
+                <label for="cantidadEjemplares">$ {{ $cantidadhojas * $tipodepapel * $tipodeimpresion * $frentedorso }}</label>
+                <label for="">{{ $cantidadhojas }}</label>
+            </div>
         </div>
     
-        <div class="row mt-3 mx-3">
+        <div class="row mt-3 mx-3 text-center">
             {{-- <div class="col-sm-12 col-md-12 col-lg-4 btn btn-danger">
                 <h4 class="marg">Costo Aprox: $ {{ $costoaprox }}</h4>
             </div> --}}
             
-            <div class="col-md-8">
+            <div class="col-md-12">
                 {{-- <button type="submit">Save Photo</button> --}}
 
-                <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                <button type="submit" class="btn btn-primary mt-3 col-6">Enviar</button>
             </div>
         </div>
     </form>
+
+    <x-dialog-modal wire:model="open">
+        <x-slot name="title">
+            Nuevo
+        </x-slot>
+        <x-slot name="content">
+            El archivo ha sido enviado correctamente!!!
+        </x-slot>
+        <x-slot name="footer">
+            <x-button  class="btn btn-info" wire:click="$set('open',false)">Cerrar</x-button>
+        </x-slot>
+    </x-dialog-modal>
+
 </div>

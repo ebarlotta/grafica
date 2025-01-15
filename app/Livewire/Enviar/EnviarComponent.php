@@ -5,6 +5,9 @@ namespace App\Livewire\Enviar;
 use App\Models\Pedido;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use App\Models\sistema_impresion;
+use App\Models\lado;
+use App\Models\papel;
 
 class EnviarComponent extends Component
 {
@@ -32,9 +35,18 @@ class EnviarComponent extends Component
     public $observaciones;
     public $costoaprox;
 
+    public $open=false;
+
+    public $sistemas, $lados, $gramajes;
+
     public function render()
     {
-        return view('livewire.enviar.enviar-component')->extends('layouts.app');
+
+        $this->sistemas = sistema_impresion::where('activo',true)->get();
+        $this->lados = lado::where('activo',true)->get();
+        $this->gramajes = papel::where('activo',true)->get();
+
+        return view('livewire.enviar.enviar-component')->with('cantidadhojas')->extends('layouts.app');
         // return view('livewire.enviar.enviar-component');
         // return view('livewire.enviar.enviar-component')->extends('adminlte::page');
     }
@@ -66,7 +78,9 @@ class EnviarComponent extends Component
             'observaciones' => '', //$this->observaciones,
             'costoaprox' =>26225,
         ]);
+        if(count($pedidos)) $this->open = true;
         session()->flash('message', 'Pedido Enviado!!!');
-        // dd($pedidos);
+        
+        $this->reset('archivo','photo','cantidadhojas','tipodocumento','tamanopapel','tipodepapel','tipodeimpresion','frentedorso','cantidadejemplares','retiraenlocal','geoposicion','observaciones','costoaprox');
     }
 }
